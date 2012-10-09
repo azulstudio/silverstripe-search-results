@@ -11,14 +11,39 @@ class SearchPage extends Page {
 	);
 
 	static $defaults = array(
+		"ShowInMenus" => 0,
+		"ShowInSearch" => 0,
 		'ResultsPerPage' => '10',
 	);
+	
+	function getShowInMenus(){
+		return 0;
+	}
+	function getShowInSearch(){
+		return 0;
+	}
+		
+	
 
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
 		$fields->addFieldToTab('Root.Main', $field = new NumericField('ResultsPerPage', 'Number of results to display per page'));
+		
 		return $fields;
 	}
+	
+	function getSettingsFields(){
+		$fields = parent::getSettingsFields();
+		
+		//Search page should never show in menus/search
+		$fields->removeByName('Visibility');
+		//$fields->removeByName('ShowInMenus');
+		//$fields->removeByName('ShowInSearch');
+		
+		return $fields;
+
+	}
+	
 
 	/**
 	 * Ensures that the /search page exists. If this page is moved then
@@ -36,6 +61,8 @@ class SearchPage extends Page {
 		}
 	}
 
+	
+	
 }
 
 class SearchPage_Controller extends Page_Controller {
