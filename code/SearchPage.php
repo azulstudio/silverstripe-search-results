@@ -2,6 +2,10 @@
 
 class SearchPage extends Page {
 
+	static $singular_name = 'Search Page';
+	static $plural_name = 'Search Pages';	
+	static $description = 'Page to show the search results';
+	
 	static $db = array(
 		'ResultsPerPage' => 'Int',
 	);
@@ -12,7 +16,7 @@ class SearchPage extends Page {
 
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
-		$fields->addFieldToTab('Root.Content.Main', $field = new NumericField('ResultsPerPage', 'Number of results to display per page'));
+		$fields->addFieldToTab('Root.Main', $field = new NumericField('ResultsPerPage', 'Number of results to display per page'));
 		return $fields;
 	}
 

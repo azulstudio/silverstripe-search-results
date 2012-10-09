@@ -19,8 +19,9 @@ class SearchFormDecorator extends Extension {
 	 *	 <input name="Search">
 	 * </form>
 	 */
-	function SearchForm() {
-		$form = parent::SearchForm();
+	function CustomSearchForm() {
+		//$form = parent::SearchForm();
+		$form = $this->owner->SearchForm();
 		$form->setFormAction(self::$resultsPage.'/results');
 		$form->addExtraClass('search-page-form no-style');
 		$form->setFormMethod('GET');
