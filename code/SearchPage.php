@@ -79,7 +79,7 @@ class SearchPage_Controller extends Page_Controller {
 		$data = array(
 			'Results' => $form->getResults(),
 			'Query' => $form->getSearchQuery(),
-			'Title' => 'Search Results'
+			//'Title' => 'Search Results'
 		);
 		$this->SearchQuery = $form->getSearchQuery();
 		$className = get_class($this->owner->data());
