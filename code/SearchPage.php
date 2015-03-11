@@ -69,6 +69,10 @@ class SearchPage_Controller extends Page_Controller {
 
 	protected $SearchQuery;
 
+	private static $allowed_actions = array(
+		'results' //search results
+	);
+
 	/**
 	 * Displays the results from the submission of a SearchForm
 	 * @see SearchFormDecorator
