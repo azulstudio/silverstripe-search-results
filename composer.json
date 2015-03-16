@@ -1,0 +1,8 @@
+{
+	"name": "azulstudio/silverstripe-search-results",
+	"description": "Search results module",
+	"type": "silverstripe-module",
+	"extra": {
+		"installer-name": "search-results"
+	}
+}
